@@ -1,0 +1,121 @@
+'use client';
+
+import { useEffect, useRef } from 'react';
+import { ArrowDown, Flame, Waves } from 'lucide-react';
+import gsap from 'gsap';
+
+export default function HeroSection() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const textRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    // Initial entrance animation
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        '.hero-title-reveal',
+        { y: 100, opacity: 0 },
+        { y: 0, opacity: 1, duration: 1.2, ease: 'power4.out', delay: 0.2, stagger: 0.15 }
+      );
+      
+      gsap.fromTo(
+        '.hero-sub-reveal',
+        { y: 30, opacity: 0 },
+        { y: 0, opacity: 1, duration: 1, ease: 'power3.out', delay: 0.8 }
+      );
+
+      gsap.fromTo(
+        '.hero-cta-reveal',
+        { scale: 0.9, opacity: 0 },
+        { scale: 1, opacity: 1, duration: 1, ease: 'elastic.out(1, 0.75)', delay: 1.1 }
+      );
+      
+      // Video parallax effect
+      if (videoRef.current) {
+        gsap.to(videoRef.current, {
+          yPercent: 25,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: 'top top',
+            end: 'bottom top',
+            scrub: true
+          }
+        });
+      }
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, []);
+
+  return (
+    <section
+      ref={containerRef}
+      className="relative w-full h-screen overflow-hidden flex items-center justify-center bg-black"
+    >
+      {/* Background Video */}
+      <video
+        ref={videoRef}
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute top-0 left-0 w-full h-[120%] object-cover opacity-60 pointer-events-none"
+      >
+        <source src="/assets/Rafting sur la Durance avec La Vague  d Orres.mp4" type="video/mp4" />
+      </video>
+
+      {/* Dark/Light overlay gradients */}
+      <div className="absolute inset-0 bg-gradient-to-t from-[var(--background)] via-transparent to-black/35 transition-colors duration-300" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/20" />
+
+      {/* Content */}
+      <div ref={textRef} className="relative z-10 text-center max-w-4xl px-6 flex flex-col items-center">
+        <div className="flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/20 bg-black/50 backdrop-blur-md mb-6 hero-sub-reveal">
+          <Waves className="w-4 h-4 text-[#00f0ff] animate-pulse" />
+          <span className="text-xs uppercase tracking-widest text-white font-bold">
+            Une aventure inoubliable sur la Durance
+          </span>
+        </div>
+
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight text-white mb-6 leading-none drop-shadow-lg">
+          <span className="block overflow-hidden">
+            <span className="block hero-title-reveal">LA VAGUE</span>
+          </span>
+          <span className="block overflow-hidden">
+            <span className="block hero-title-reveal font-extrabold text-[#00f0ff]">D'ORRES</span>
+          </span>
+        </h1>
+
+        <p className="text-lg md:text-2xl text-white/95 max-w-2xl font-semibold tracking-wide mb-10 leading-relaxed hero-sub-reveal drop-shadow-md">
+          Laissez-vous guider sur les rapides de la Durance (11km), une aventure ludique, sportive et rafraîchissante.
+        </p>
+
+        <div className="flex flex-col sm:flex-row gap-4 hero-cta-reveal">
+          <a
+            href="#presentation"
+            className="px-8 py-4 bg-black/30 hover:bg-black/50 backdrop-blur-sm border-2 border-white/40 hover:border-white rounded-full text-white font-bold tracking-wider uppercase transition-all duration-300 hover:scale-105"
+          >
+            Découvrir l'activité
+          </a>
+          <a
+            href="#contact"
+            className="px-8 py-4 bg-[#ff6b4a] hover:bg-[#ff8c70] rounded-full text-white font-bold tracking-wider uppercase shadow-[0_0_20px_rgba(255,107,74,0.3)] hover:shadow-[0_0_30px_rgba(255,107,74,0.5)] transition-all duration-300 hover:scale-105 flex items-center gap-2"
+          >
+            <Flame className="w-5 h-5 text-white animate-pulse" />
+            Réserver Maintenant
+          </a>
+        </div>
+      </div>
+
+      {/* Scroll indicator */}
+      <a
+        href="#presentation"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-white/70 hover:text-white transition-colors duration-300 cursor-pointer drop-shadow-sm"
+      >
+        <span className="text-xs uppercase tracking-widest font-semibold">Faites défiler</span>
+        <ArrowDown className="w-4 h-4 animate-bounce text-[#00f0ff]" />
+      </a>
+    </section>
+  );
+}
