@@ -9,18 +9,30 @@ gsap.registerPlugin(ScrollTrigger);
 
 const prestations = [
   {
-    title: 'Rafting Découverte / Sensation',
-    desc: 'Descente de rivière de 11km sur la Durance. Parcours ludique, sportif, éducatif et rafraîchissant adapté à tous les niveaux.',
+    title: 'Rafting sur la Durance',
+    desc: 'Le rafting est une activité nautique de pleine nature qui consiste à descendre une rivière à bord d’un bateau pneumatique. Entre passages calmes et rapides plus sportifs, cette aventure conviviale et ludique met l’accent sur la découverte de la nature, le dépassement de soi et l’esprit d’équipe. Descente de 11 km de Châteauroux-les-Alpes à Embrun (environ 1h30 de navigation).',
     price: '38€',
+    age: 'À partir de 6 ans (accompagné)',
+    gear: 'Prévoir un maillot de bain ainsi qu’une paire de chaussures fermées avec talons et orteils couverts.',
+    dep: 'Deux départs par jour : 9h30 & 14h15',
     icon: Star,
+  },
+  {
+    title: 'Randonnée Aquatique (Canyon d’initiation)',
+    desc: 'Activité de pleine nature qui consiste à évoluer dans le lit d’un torrent encaissé, en alternant marche et nage. Franchissez des obstacles divers en glissant sur de véritables toboggans naturels sculptés par la rivière et en réalisant des sauts dans des vasques. Sans rappel ni manipulation de cordes, cette formule permet de découvrir le canyoning de manière ludique, progressive et accessible. Environ 2 km de montée et descente au ravin du Couleau pour 110m de dénivelé.',
+    price: '45€',
+    age: 'À partir de 6 ans (accompagné)',
+    gear: 'Prévoir un maillot de bain et une paire de chaussures avec une bonne semelle.',
+    dep: 'Départs uniquement l’après-midi',
+    icon: Sparkles,
   },
 ];
 
 const equipments = [
-  'Combinaison néoprène intégrale homologuée',
-  'Gilet de sauvetage haute flottabilité aux normes CE',
-  'Casque de protection adapté aux sports d’eaux vives',
-  'Pagaies professionnelles robustes',
+  'Combinaison néoprène isotherme intégrale',
+  'Gilet de flottabilité haute visibilité aux normes CE',
+  'Casque de protection eau vive robuste',
+  'Pagaie adaptée à l’activité',
 ];
 
 export default function Prestations() {
@@ -79,7 +91,7 @@ export default function Prestations() {
                     <div className="w-12 h-12 rounded-xl bg-[#007799]/10 dark:bg-[#00f0ff]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#007799]/20 dark:group-hover:bg-[#00f0ff]/20 transition-colors duration-300">
                       <IconComponent className="w-6 h-6 text-[#007799] dark:text-[#00f0ff]" />
                     </div>
-                    <div className="flex-grow">
+                    <div className="flex-grow space-y-3">
                       <div className="flex items-center justify-between gap-4 flex-wrap">
                         <h3 className="text-lg font-bold text-[#0f172a] dark:text-white uppercase tracking-wide">
                           {item.title}
@@ -88,9 +100,20 @@ export default function Prestations() {
                           À partir de {item.price} / pers.
                         </span>
                       </div>
-                      <p className="text-[#0f172a]/60 dark:text-white/60 text-sm mt-2 leading-relaxed">
+                      <p className="text-[#0f172a]/70 dark:text-white/70 text-sm leading-relaxed">
                         {item.desc}
                       </p>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-2 pt-2 border-t border-black/5 dark:border-white/5 text-xs">
+                        <div>
+                          <strong className="text-[#007799] dark:text-[#00f0ff]">Âge :</strong> {item.age}
+                        </div>
+                        <div>
+                          <strong className="text-[#007799] dark:text-[#00f0ff]">Départs :</strong> {item.dep}
+                        </div>
+                        <div className="col-span-1 md:col-span-2">
+                          <strong className="text-[#ff6b4a]">Tenue :</strong> {item.gear}
+                        </div>
+                      </div>
                     </div>
                   </div>
                 );

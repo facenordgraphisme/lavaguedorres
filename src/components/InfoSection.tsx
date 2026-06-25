@@ -61,11 +61,11 @@ export default function InfoSection() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-20">
           <span className="text-xs font-bold uppercase tracking-widest text-[#007799] dark:text-[#00f0ff] bg-[#00f0ff]/10 px-4 py-1.5 rounded-full mb-4 inline-block">
-            Présentation de l'Activité
+            Présentation de nos activités
           </span>
           <h2 className="reveal-heading text-4xl md:text-6xl font-black uppercase tracking-tight text-[#0f172a] dark:text-white mt-2">
-            Dompter la Durance sur <br />
-            <span className="text-gradient">11 Kilomètres de Rapides</span>
+            Rafting & Randonnée Aquatique <br />
+            <span className="text-gradient">Au Cœur des Hautes-Alpes</span>
           </h2>
         </div>
 

@@ -8,14 +8,11 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const images = [
-  '/assets/121783_25_08_22.JPG',
-  '/assets/121784_25_08_22.JPG',
-  '/assets/121785_25_08_22.JPG',
-  '/assets/121786_25_08_22.JPG',
-  '/assets/121787_25_08_22.JPG',
-  '/assets/121788_25_08_22.JPG',
-  '/assets/121789_25_08_22.JPG',
-  '/assets/121790_25_08_22.JPG',
+  '/assets/raft1.jpg',
+  '/assets/raft2.jpg',
+  '/assets/raft3.jpg',
+  '/assets/raft4.jpg',
+  '/assets/raft5.jpg',
 ];
 
 export default function PhotoGallery() {

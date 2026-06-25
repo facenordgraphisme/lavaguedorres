@@ -67,8 +67,8 @@ export default function Footer() {
                 </div>
                 <div>
                   <span className="text-xs text-[#0f172a]/40 dark:text-white/40 uppercase tracking-widest block font-medium">Adresse & Local</span>
-                  <span className="text-[#0f172a] dark:text-white font-bold block">Local ESI 1800, Les Oriannes des Sources</span>
-                  <span className="text-xs text-[#0f172a]/60 dark:text-white/60">Les Orres 1800, 05200 Les Orres</span>
+                  <span className="text-[#0f172a] dark:text-white font-bold block">Local ESI, bâtiment d'accueil de Bois Méan</span>
+                  <span className="text-xs text-[#0f172a]/60 dark:text-white/60">Les Orres 1800 (à côté du Point Info)</span>
                 </div>
               </div>
             </div>

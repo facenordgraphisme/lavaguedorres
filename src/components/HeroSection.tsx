@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import Image from 'next/image';
 import { ArrowDown, Flame, Waves } from 'lucide-react';
 import gsap from 'gsap';
 
@@ -10,12 +11,31 @@ export default function HeroSection() {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
+    // Set video start time to 5 seconds
+    if (videoRef.current) {
+      videoRef.current.currentTime = 5;
+      // Backup loop checking to restart at 5s when it ends
+      const handleTimeUpdate = () => {
+        if (videoRef.current && videoRef.current.currentTime >= videoRef.current.duration - 0.2) {
+          videoRef.current.currentTime = 5;
+        }
+      };
+      videoRef.current.addEventListener('timeupdate', handleTimeUpdate);
+      return () => {
+        if (videoRef.current) {
+          videoRef.current.removeEventListener('timeupdate', handleTimeUpdate);
+        }
+      };
+    }
+  }, []);
+
+  useEffect(() => {
     // Initial entrance animation
     const ctx = gsap.context(() => {
       gsap.fromTo(
         '.hero-title-reveal',
-        { y: 100, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1.2, ease: 'power4.out', delay: 0.2, stagger: 0.15 }
+        { scale: 0.8, opacity: 0 },
+        { scale: 1, opacity: 1, duration: 1.2, ease: 'power4.out', delay: 0.2 }
       );
       
       gsap.fromTo(
@@ -78,14 +98,16 @@ export default function HeroSection() {
           </span>
         </div>
 
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight text-white mb-6 leading-none drop-shadow-lg">
-          <span className="block overflow-hidden">
-            <span className="block hero-title-reveal">LA VAGUE</span>
-          </span>
-          <span className="block overflow-hidden">
-            <span className="block hero-title-reveal font-extrabold text-[#00f0ff]">D'ORRES</span>
-          </span>
-        </h1>
+        {/* Logo Def Display */}
+        <div className="relative w-72 h-72 md:w-96 md:h-96 mx-auto mb-6 hero-title-reveal drop-shadow-2xl">
+          <Image
+            src="/assets/logo-def-transp-light.png"
+            alt="La Vague d'Orres"
+            fill
+            className="object-contain"
+            priority
+          />
+        </div>
 
         <p className="text-lg md:text-2xl text-white/95 max-w-2xl font-semibold tracking-wide mb-10 leading-relaxed hero-sub-reveal drop-shadow-md">
           Laissez-vous guider sur les rapides de la Durance (11km), une aventure ludique, sportive et rafraîchissante.

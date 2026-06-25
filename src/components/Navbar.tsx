@@ -76,7 +76,7 @@ export default function Navbar() {
             <div className="relative w-32 h-32 md:w-36 md:h-36 -my-5 overflow-hidden transition-transform duration-500 group-hover:scale-105">
               {/* Light Theme Logo */}
               <Image
-                src="/assets/Logo transparent.png"
+                src="/assets/logo def transp.png"
                 alt="La Vague d'Orres Logo"
                 fill
                 className="object-contain dark:hidden"
@@ -84,7 +84,7 @@ export default function Navbar() {
               />
               {/* Dark Theme Logo (Clear/Bright colors) */}
               <Image
-                src="/assets/Logo-transparent-light.png"
+                src="/assets/logo-def-transp-light.png"
                 alt="La Vague d'Orres Logo"
                 fill
                 className="object-contain hidden dark:block"
