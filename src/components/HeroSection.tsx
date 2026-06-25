@@ -99,7 +99,7 @@ export default function HeroSection() {
         </div>
 
         {/* Logo Def Display */}
-        <div className="relative w-72 h-72 md:w-96 md:h-96 mx-auto mb-6 hero-title-reveal drop-shadow-2xl">
+        <div className="relative w-56 h-56 sm:w-72 sm:h-72 md:w-96 md:h-96 mx-auto mb-4 sm:mb-6 hero-title-reveal drop-shadow-2xl">
           <Image
             src="/assets/logo-def-transp-light.png"
             alt="La Vague d'Orres"
@@ -109,7 +109,7 @@ export default function HeroSection() {
           />
         </div>
 
-        <p className="text-lg md:text-2xl text-white/95 max-w-2xl font-semibold tracking-wide mb-10 leading-relaxed hero-sub-reveal drop-shadow-md">
+        <p className="text-sm sm:text-lg md:text-2xl text-white/95 max-w-2xl font-semibold tracking-wide mb-8 sm:mb-10 leading-relaxed hero-sub-reveal drop-shadow-md">
           Laissez-vous guider sur les rapides de la Durance (11km), une aventure ludique, sportive et rafraîchissante.
         </p>
 
