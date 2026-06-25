@@ -145,10 +145,10 @@ export default function Navbar() {
       <div
         ref={overlayRef}
         style={{ clipPath: 'circle(0% at 90% 10%)' }}
-        className="fixed inset-0 z-[100] w-full h-screen bg-[#030a10] text-white flex flex-col justify-between p-8 md:hidden"
+        className="fixed inset-0 z-[100] w-full h-screen overflow-y-auto bg-[#030a10] text-white flex flex-col justify-between p-8 md:hidden"
       >
         {/* Header inside menu */}
-        <div className="flex items-center justify-between w-full">
+        <div className="flex items-center justify-between w-full flex-shrink-0">
           <div className="flex items-center gap-2">
             <Waves className="w-5 h-5 text-[#00f0ff] animate-pulse" />
             <span className="font-black tracking-widest text-sm text-[#00f0ff]">LA VAGUE D'ORRES</span>
@@ -162,7 +162,7 @@ export default function Navbar() {
         </div>
 
         {/* Links container */}
-        <div ref={linksRef} className="flex flex-col gap-6 my-auto">
+        <div ref={linksRef} className="flex flex-col gap-6 my-auto py-8 flex-shrink-0">
           {[
             { label: "L'Aventure Durance", href: '#presentation' },
             { label: 'Nos Prestations', href: '#prestations' },
@@ -182,7 +182,7 @@ export default function Navbar() {
         </div>
 
         {/* Footer info inside menu */}
-        <div className="mobile-nav-footer border-t border-white/10 pt-6 space-y-4">
+        <div className="mobile-nav-footer border-t border-white/10 pt-6 space-y-4 flex-shrink-0">
           <div className="text-xs text-white/50 space-y-1">
             <p className="font-bold text-[#00f0ff] uppercase tracking-wider">Accueil & Local</p>
             <p>ESI 1800, Les Oriannes des Sources</p>
