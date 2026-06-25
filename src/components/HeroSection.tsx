@@ -116,13 +116,13 @@ export default function HeroSection() {
         <div className="flex flex-col sm:flex-row gap-4 hero-cta-reveal">
           <a
             href="#presentation"
-            className="px-8 py-4 bg-black/30 hover:bg-black/50 backdrop-blur-sm border-2 border-white/40 hover:border-white rounded-full text-white font-bold tracking-wider uppercase transition-all duration-300 hover:scale-105"
+            className="px-8 py-4 btn-premium-secondary text-sm font-bold tracking-wider uppercase flex items-center justify-center"
           >
             Découvrir l'activité
           </a>
           <a
             href="#contact"
-            className="px-8 py-4 bg-[#ff6b4a] hover:bg-[#ff8c70] rounded-full text-white font-bold tracking-wider uppercase shadow-[0_0_20px_rgba(255,107,74,0.3)] hover:shadow-[0_0_30px_rgba(255,107,74,0.5)] transition-all duration-300 hover:scale-105 flex items-center gap-2"
+            className="px-8 py-4 btn-premium-primary text-sm font-bold tracking-wider uppercase flex items-center justify-center gap-2"
           >
             <Flame className="w-5 h-5 text-white animate-pulse" />
             Réserver Maintenant

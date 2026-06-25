@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useRef } from 'react';
 import Image from 'next/image';
-import { Anchor, Sun, Moon, Menu, X, ArrowRight, Waves } from 'lucide-react';
+import { Anchor, Sun, Moon, Menu, X, ArrowRight, Waves, Phone } from 'lucide-react';
 import { useTheme } from '@/components/ThemeProvider';
 import gsap from 'gsap';
 
@@ -122,10 +122,9 @@ export default function Navbar() {
             {/* Desktop Booking Link */}
             <a
               href="#contact"
-              className="hidden sm:flex relative px-5 py-2 rounded-full overflow-hidden text-xs font-bold tracking-wider uppercase text-white bg-[#007799] hover:bg-[#005c77] shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 items-center gap-2 group"
+              className="hidden sm:flex items-center gap-2 text-xs font-black tracking-widest uppercase py-2.5 px-6 rounded-full border border-sky-400/20 dark:border-[#00f0ff]/20 bg-gradient-to-r from-[#007799] to-[#00a3cc] dark:from-[#007799] dark:to-[#030a10] text-white hover:from-[#ff6b4a] hover:to-[#ff8c70] shadow-[0_4px_15px_rgba(0,119,153,0.25)] hover:shadow-[0_0_25px_rgba(255,107,74,0.5)] transition-all duration-500 hover:scale-105 active:scale-95 group"
             >
-              <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-out" />
-              <Anchor className="w-3.5 h-3.5" />
+              <Anchor className="w-3.5 h-3.5 group-hover:rotate-12 transition-transform duration-300" />
               Réserver
             </a>
 
@@ -192,9 +191,9 @@ export default function Navbar() {
             
             <a
               href="tel:0673458434"
-              className="w-full py-3.5 rounded-full bg-[#ff6b4a] text-white font-bold uppercase tracking-wider text-xs flex items-center justify-center gap-2 shadow-lg"
+              className="w-full py-3.5 btn-premium-primary text-xs flex items-center justify-center gap-2"
             >
-              <Anchor className="w-4 h-4" />
+              <Phone className="w-4 h-4 text-white animate-pulse" />
               Appeler 06 73 45 84 34
             </a>
           </div>

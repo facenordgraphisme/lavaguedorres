@@ -97,7 +97,7 @@ export default function AboutAndFaq() {
         {/* Guides Area */}
         <div className="guides-container">
           <div className="text-center mb-16">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#007799] dark:text-[#00f0ff] bg-[#00f0ff]/10 px-4 py-1.5 rounded-full mb-3 inline-block">
+            <span className="badge-premium mb-3">
               L'Équipe
             </span>
             <h2 className="text-3xl md:text-5xl font-black uppercase text-slate-800 dark:text-white tracking-tight">
@@ -107,12 +107,12 @@ export default function AboutAndFaq() {
               Diplômés d’État et passionnés, nos guides s’assurent de votre sécurité tout en vous garantissant des moments de pur plaisir et d’échange.
             </p>
           </div>
-
+ 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
             {guides.map((guide, idx) => (
               <div
                 key={idx}
-                className="guide-card p-6 rounded-3xl glass border border-black/5 dark:border-white/5 flex flex-col sm:flex-row items-center gap-6 hover:scale-[1.02] transition-transform duration-300"
+                className="guide-card card-premium p-6 rounded-3xl glass border border-black/5 dark:border-white/5 flex flex-col sm:flex-row items-center gap-6"
               >
                 <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-2xl overflow-hidden flex-shrink-0 border-2 border-[#007799]/30">
                   <Image
@@ -136,25 +136,25 @@ export default function AboutAndFaq() {
             ))}
           </div>
         </div>
-
+ 
         {/* FAQ Area */}
         <div className="faq-container max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#007799] dark:text-[#00f0ff] bg-[#00f0ff]/10 px-4 py-1.5 rounded-full mb-3 inline-block">
+            <span className="badge-premium mb-3">
               FAQ
             </span>
             <h2 className="text-3xl md:text-5xl font-black uppercase text-slate-800 dark:text-white tracking-tight">
               Questions <span className="text-gradient">Fréquentes</span>
             </h2>
           </div>
-
+ 
           <div className="space-y-4">
             {faqs.map((faq, idx) => {
               const isOpen = openFaq === idx;
               return (
                 <div
                   key={idx}
-                  className="faq-item rounded-2xl glass border border-black/5 dark:border-white/5 overflow-hidden transition-all duration-300"
+                  className="faq-item card-premium rounded-2xl glass border border-black/5 dark:border-white/5 overflow-hidden transition-all duration-300"
                 >
                   <button
                     onClick={() => setOpenFaq(isOpen ? null : idx)}

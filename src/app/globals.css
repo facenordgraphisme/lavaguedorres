@@ -81,13 +81,13 @@ html.lenis, html.lenis body {
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, #0f172a 0%, #007799 100%);
+  background: linear-gradient(135deg, #005577 0%, #00a3cc 50%, #00f0ff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .dark .text-gradient {
-  background: linear-gradient(135deg, #ffffff 0%, #00f0ff 100%);
+  background: linear-gradient(135deg, #00f0ff 0%, #00a3cc 50%, #ffffff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -96,6 +96,131 @@ html.lenis, html.lenis body {
   background: linear-gradient(135deg, #ff8c70 0%, #ff6b4a 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+/* Premium Buttons & Interactive Styles */
+.btn-premium-primary {
+  position: relative;
+  overflow: hidden;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #ff6b4a 0%, #ff4b2b 100%);
+  color: white;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 15px rgba(255, 107, 74, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.btn-premium-primary::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.btn-premium-primary:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 25px rgba(255, 107, 74, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.btn-premium-primary:hover::after {
+  transform: translateX(100%);
+}
+
+.btn-premium-secondary {
+  position: relative;
+  overflow: hidden;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  color: white;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-premium-secondary::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.btn-premium-secondary:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px) scale(1.03);
+}
+
+.btn-premium-secondary:hover::after {
+  transform: translateX(100%);
+}
+
+/* Premium Card Design with Border Beam/Glow */
+.card-premium {
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-premium::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(0, 119, 153, 0.1) 0%, rgba(255, 107, 74, 0.05) 50%, rgba(255, 255, 255, 0) 100%);
+  z-index: -1;
+  transition: opacity 0.4s ease;
+}
+
+.dark .card-premium::before {
+  background: linear-gradient(135deg, rgba(0, 240, 255, 0.15) 0%, rgba(255, 107, 74, 0.08) 50%, rgba(255, 255, 255, 0) 100%);
+}
+
+.card-premium:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+}
+
+.dark .card-premium:hover {
+  box-shadow: 0 12px 30px rgba(0, 240, 255, 0.05);
+}
+
+/* Badge Premium */
+.badge-premium {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  padding: 0.35rem 1rem;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, rgba(0, 119, 153, 0.08) 0%, rgba(0, 240, 255, 0.12) 100%);
+  border: 1px solid rgba(0, 240, 255, 0.15);
+  color: #007799;
+}
+
+.dark .badge-premium {
+  color: #00f0ff;
+  border-color: rgba(0, 240, 255, 0.25);
+  background: linear-gradient(135deg, rgba(0, 240, 255, 0.1) 0%, rgba(0, 240, 255, 0.02) 100%);
+}
+
+/* Iconic Floating shapes */
+.icon-glow-primary {
+  box-shadow: 0 0 15px rgba(0, 119, 153, 0.15);
+}
+.dark .icon-glow-primary {
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+}
+
+.icon-glow-accent {
+  box-shadow: 0 0 15px rgba(255, 107, 74, 0.2);
+}
+.dark .icon-glow-accent {
+  box-shadow: 0 0 20px rgba(255, 107, 74, 0.4);
 }
 
 

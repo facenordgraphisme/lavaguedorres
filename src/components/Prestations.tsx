@@ -71,7 +71,7 @@ export default function Prestations() {
           {/* Left Column: Prestations */}
           <div className="prest-col space-y-8">
             <div>
-              <span className="text-xs font-bold uppercase tracking-widest text-[#007799] dark:text-[#00f0ff] bg-[#00f0ff]/10 px-4 py-1.5 rounded-full mb-3 inline-block">
+              <span className="badge-premium mb-3">
                 Formules & Services
               </span>
               <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight text-[#0f172a] dark:text-white">
@@ -79,16 +79,16 @@ export default function Prestations() {
                 <span className="text-gradient">Eaux Vives</span>
               </h2>
             </div>
-
+ 
             <div className="space-y-6">
               {prestations.map((item, idx) => {
                 const IconComponent = item.icon;
                 return (
                   <div
                     key={idx}
-                    className="p-6 rounded-2xl glass border border-black/5 dark:border-white/5 hover:border-[#007799]/20 dark:hover:border-[#00f0ff]/20 transition-all duration-300 flex items-start gap-4 group"
+                    className="p-6 rounded-2xl glass border border-black/5 dark:border-white/5 hover:border-[#007799]/20 dark:hover:border-[#00f0ff]/20 card-premium transition-all duration-300 flex items-start gap-4 group"
                   >
-                    <div className="w-12 h-12 rounded-xl bg-[#007799]/10 dark:bg-[#00f0ff]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#007799]/20 dark:group-hover:bg-[#00f0ff]/20 transition-colors duration-300">
+                    <div className="w-12 h-12 rounded-xl bg-[#007799]/10 dark:bg-[#00f0ff]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#007799]/20 dark:group-hover:bg-[#00f0ff]/20 icon-glow-primary transition-all duration-300">
                       <IconComponent className="w-6 h-6 text-[#007799] dark:text-[#00f0ff]" />
                     </div>
                     <div className="flex-grow space-y-3">
@@ -120,11 +120,11 @@ export default function Prestations() {
               })}
             </div>
           </div>
-
+ 
           {/* Right Column: Equipements & Distinctions */}
           <div className="prest-col space-y-12 lg:pl-6">
             {/* Equipements */}
-            <div className="p-8 rounded-3xl glass border border-black/5 dark:border-white/5 relative overflow-hidden">
+            <div className="p-8 rounded-3xl glass border border-black/5 dark:border-white/5 card-premium relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/10 rounded-full blur-2xl" />
               <div className="flex items-center gap-3 mb-6">
                 <Shield className="w-6 h-6 text-purple-600 dark:text-purple-400" />
@@ -144,9 +144,9 @@ export default function Prestations() {
                 * Tout notre matériel est désinfecté et contrôlé rigoureusement après chaque descente.
               </p>
             </div>
-
+ 
             {/* Distinctions */}
-            <div className="p-8 rounded-3xl glass border border-black/5 dark:border-white/5 relative overflow-hidden">
+            <div className="p-8 rounded-3xl glass border border-black/5 dark:border-white/5 card-premium relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#ff6b4a]/10 rounded-full blur-2xl" />
               <div className="flex items-center gap-3 mb-4">
                 <Award className="w-6 h-6 text-[#ff6b4a]" />
