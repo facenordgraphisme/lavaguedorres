@@ -145,57 +145,59 @@ export default function Navbar() {
       <div
         ref={overlayRef}
         style={{ clipPath: 'circle(0% at 90% 10%)' }}
-        className="fixed inset-0 z-[100] w-full h-screen overflow-y-auto bg-[#030a10] text-white flex flex-col justify-between p-8 md:hidden"
+        className="fixed inset-0 z-[100] w-full h-screen overflow-y-auto bg-[#030a10] text-white md:hidden"
       >
-        {/* Header inside menu */}
-        <div className="flex items-center justify-between w-full flex-shrink-0">
-          <div className="flex items-center gap-2">
-            <Waves className="w-5 h-5 text-[#00f0ff] animate-pulse" />
-            <span className="font-black tracking-widest text-sm text-[#00f0ff]">LA VAGUE D'ORRES</span>
-          </div>
-          <button
-            onClick={() => setMobileMenuOpen(false)}
-            className="p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors duration-200"
-          >
-            <X className="w-6 h-6" />
-          </button>
-        </div>
-
-        {/* Links container */}
-        <div ref={linksRef} className="flex flex-col gap-6 my-auto py-8 flex-shrink-0">
-          {[
-            { label: "L'Aventure Durance", href: '#presentation' },
-            { label: 'Nos Prestations', href: '#prestations' },
-            { label: 'Galerie Photos', href: '#gallery' },
-            { label: 'Réservation & Contact', href: '#contact' },
-          ].map((link, idx) => (
-            <a
-              key={idx}
-              href={link.href}
-              onClick={handleLinkClick}
-              className="mobile-nav-link text-3xl font-black uppercase tracking-tight text-white/70 hover:text-[#00f0ff] transition-colors duration-300 flex items-center justify-between group py-2 border-b border-white/5"
+        <div className="min-h-full flex flex-col justify-between p-6">
+          {/* Header inside menu */}
+          <div className="flex items-center justify-between w-full flex-shrink-0">
+            <div className="flex items-center gap-2">
+              <Waves className="w-5 h-5 text-[#00f0ff] animate-pulse" />
+              <span className="font-black tracking-widest text-sm text-[#00f0ff]">LA VAGUE D'ORRES</span>
+            </div>
+            <button
+              onClick={() => setMobileMenuOpen(false)}
+              className="p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors duration-200"
             >
-              <span>{link.label}</span>
-              <ArrowRight className="w-6 h-6 text-[#00f0ff] opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300" />
-            </a>
-          ))}
-        </div>
-
-        {/* Footer info inside menu */}
-        <div className="mobile-nav-footer border-t border-white/10 pt-6 space-y-4 flex-shrink-0">
-          <div className="text-xs text-white/50 space-y-1">
-            <p className="font-bold text-[#00f0ff] uppercase tracking-wider">Accueil & Local</p>
-            <p>ESI 1800, Les Oriannes des Sources</p>
-            <p>05200 Les Orres</p>
+              <X className="w-6 h-6" />
+            </button>
           </div>
-          
-          <a
-            href="tel:0673458434"
-            className="w-full py-3.5 rounded-full bg-[#ff6b4a] text-white font-bold uppercase tracking-wider text-xs flex items-center justify-center gap-2 shadow-lg"
-          >
-            <Anchor className="w-4 h-4" />
-            Appeler 06 73 45 84 34
-          </a>
+
+          {/* Links container */}
+          <div ref={linksRef} className="flex flex-col gap-4 my-auto py-6 flex-shrink-0">
+            {[
+              { label: "L'Aventure Durance", href: '#presentation' },
+              { label: 'Nos Prestations', href: '#prestations' },
+              { label: 'Galerie Photos', href: '#gallery' },
+              { label: 'Réservation & Contact', href: '#contact' },
+            ].map((link, idx) => (
+              <a
+                key={idx}
+                href={link.href}
+                onClick={handleLinkClick}
+                className="mobile-nav-link text-xl font-bold uppercase tracking-tight text-white/70 hover:text-[#00f0ff] transition-colors duration-300 flex items-center justify-between group py-1.5 border-b border-white/5"
+              >
+                <span>{link.label}</span>
+                <ArrowRight className="w-5 h-5 text-[#00f0ff] opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300" />
+              </a>
+            ))}
+          </div>
+
+          {/* Footer info inside menu */}
+          <div className="mobile-nav-footer border-t border-white/10 pt-4 space-y-3 flex-shrink-0">
+            <div className="text-xs text-white/50 space-y-1">
+              <p className="font-bold text-[#00f0ff] uppercase tracking-wider">Accueil & Local</p>
+              <p>ESI 1800, Les Oriannes des Sources</p>
+              <p>05200 Les Orres</p>
+            </div>
+            
+            <a
+              href="tel:0673458434"
+              className="w-full py-3 rounded-full bg-[#ff6b4a] text-white font-bold uppercase tracking-wider text-xs flex items-center justify-center gap-2 shadow-lg"
+            >
+              <Anchor className="w-4 h-4" />
+              Appeler 06 73 45 84 34
+            </a>
+          </div>
         </div>
       </div>
     </>
