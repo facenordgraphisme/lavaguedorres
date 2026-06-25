@@ -145,9 +145,9 @@ export default function Navbar() {
       <div
         ref={overlayRef}
         style={{ clipPath: 'circle(0% at 90% 10%)' }}
-        className="fixed inset-0 z-[100] w-full h-screen overflow-y-auto bg-[#030a10] text-white md:hidden"
+        className="fixed inset-0 z-[100] w-full h-dvh overflow-y-auto bg-[#030a10] text-white md:hidden"
       >
-        <div className="min-h-full flex flex-col justify-between p-6">
+        <div className="min-h-full flex flex-col justify-start gap-8 p-6">
           {/* Header inside menu */}
           <div className="flex items-center justify-between w-full flex-shrink-0">
             <div className="flex items-center gap-2">
@@ -163,7 +163,7 @@ export default function Navbar() {
           </div>
 
           {/* Links container */}
-          <div ref={linksRef} className="flex flex-col gap-4 my-auto py-6 flex-shrink-0">
+          <div ref={linksRef} className="flex flex-col gap-5 py-2 flex-shrink-0">
             {[
               { label: "L'Aventure Durance", href: '#presentation' },
               { label: 'Nos Prestations', href: '#prestations' },
@@ -174,10 +174,10 @@ export default function Navbar() {
                 key={idx}
                 href={link.href}
                 onClick={handleLinkClick}
-                className="mobile-nav-link text-xl font-bold uppercase tracking-tight text-white/70 hover:text-[#00f0ff] transition-colors duration-300 flex items-center justify-between group py-1.5 border-b border-white/5"
+                className="mobile-nav-link text-3xl font-black uppercase tracking-tight text-white/70 hover:text-[#00f0ff] transition-colors duration-300 flex items-center justify-between group py-2 border-b border-white/5"
               >
                 <span>{link.label}</span>
-                <ArrowRight className="w-5 h-5 text-[#00f0ff] opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300" />
+                <ArrowRight className="w-6 h-6 text-[#00f0ff] opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300" />
               </a>
             ))}
           </div>
@@ -192,7 +192,7 @@ export default function Navbar() {
             
             <a
               href="tel:0673458434"
-              className="w-full py-3 rounded-full bg-[#ff6b4a] text-white font-bold uppercase tracking-wider text-xs flex items-center justify-center gap-2 shadow-lg"
+              className="w-full py-3.5 rounded-full bg-[#ff6b4a] text-white font-bold uppercase tracking-wider text-xs flex items-center justify-center gap-2 shadow-lg"
             >
               <Anchor className="w-4 h-4" />
               Appeler 06 73 45 84 34
