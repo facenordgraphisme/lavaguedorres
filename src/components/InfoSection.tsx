@@ -61,10 +61,10 @@ export default function InfoSection() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-20">
           <span className="badge-premium mb-4">
-            Présentation de nos activités
+            Présentation de l'activité
           </span>
           <h2 className="reveal-heading text-4xl md:text-6xl font-black uppercase tracking-tight text-[#0f172a] dark:text-white mt-2">
-            Rafting & Randonnée Aquatique <br />
+            Rafting Sensationnel <br />
             <span className="text-gradient">Au Cœur des Hautes-Alpes</span>
           </h2>
         </div>

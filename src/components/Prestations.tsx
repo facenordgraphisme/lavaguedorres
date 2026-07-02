@@ -17,15 +17,6 @@ const prestations = [
     dep: 'Deux départs par jour : 9h30 & 14h15',
     icon: Star,
   },
-  {
-    title: 'Randonnée Aquatique (Canyon d’initiation)',
-    desc: 'Activité de pleine nature qui consiste à évoluer dans le lit d’un torrent encaissé, en alternant marche et nage. Franchissez des obstacles divers en glissant sur de véritables toboggans naturels sculptés par la rivière et en réalisant des sauts dans des vasques. Sans rappel ni manipulation de cordes, cette formule permet de découvrir le canyoning de manière ludique, progressive et accessible. Environ 2 km de montée et descente au ravin du Couleau pour 110m de dénivelé.',
-    price: '45€',
-    age: 'À partir de 6 ans (accompagné)',
-    gear: 'Prévoir un maillot de bain et une paire de chaussures avec une bonne semelle.',
-    dep: 'Départs uniquement l’après-midi',
-    icon: Sparkles,
-  },
 ];
 
 const equipments = [
@@ -75,8 +66,8 @@ export default function Prestations() {
                 Formules & Services
               </span>
               <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight text-[#0f172a] dark:text-white">
-                Nos Prestations <br />
-                <span className="text-gradient">Eaux Vives</span>
+                Notre Formule <br />
+                <span className="text-gradient">Rafting</span>
               </h2>
             </div>
  

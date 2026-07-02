@@ -145,7 +145,7 @@ export default function Footer() {
         <div className="border-t border-black/5 dark:border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#0f172a]/40 dark:text-white/40">
           <p>© {new Date().getFullYear()} La Vague d'Orres. Tous droits réservés.</p>
           <p>
-            Réalisé pour la présentation de l'activité Rafting à la station des Orres.
+            Propulsé par Face Nord Graphisme
           </p>
         </div>
       </div>

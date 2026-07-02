@@ -11,22 +11,7 @@ export default function HeroSection() {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    // Set video start time to 5 seconds
-    if (videoRef.current) {
-      videoRef.current.currentTime = 5;
-      // Backup loop checking to restart at 5s when it ends
-      const handleTimeUpdate = () => {
-        if (videoRef.current && videoRef.current.currentTime >= videoRef.current.duration - 0.2) {
-          videoRef.current.currentTime = 5;
-        }
-      };
-      videoRef.current.addEventListener('timeupdate', handleTimeUpdate);
-      return () => {
-        if (videoRef.current) {
-          videoRef.current.removeEventListener('timeupdate', handleTimeUpdate);
-        }
-      };
-    }
+    // New video starts from the beginning and loops naturally
   }, []);
 
   useEffect(() => {
@@ -82,7 +67,7 @@ export default function HeroSection() {
         playsInline
         className="absolute top-0 left-0 w-full h-[120%] object-cover opacity-60 pointer-events-none"
       >
-        <source src="/assets/Rafting sur la Durance avec La Vague  d Orres.mp4" type="video/mp4" />
+        <source src="/assets/video hero bg.mp4" type="video/mp4" />
       </video>
 
       {/* Dark/Light overlay gradients */}

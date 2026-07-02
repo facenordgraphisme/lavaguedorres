@@ -73,7 +73,7 @@ export default function Navbar() {
           }`}
         >
           <a href="#" className="flex items-center group">
-            <div className="relative w-20 h-20 sm:w-28 sm:h-28 md:w-36 md:h-36 -my-2 sm:-my-5 overflow-hidden transition-transform duration-500 group-hover:scale-105">
+            <div className="relative w-20 h-20 sm:w-28 sm:h-28 md:w-36 md:h-36 -my-4 sm:-my-8 md:-my-11 overflow-hidden transition-transform duration-500 group-hover:scale-105">
               {/* Light Theme Logo */}
               <Image
                 src="/assets/logo def transp.png"
